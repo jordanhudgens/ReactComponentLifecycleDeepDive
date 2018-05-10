@@ -4,29 +4,62 @@ const DiscussionMessage = props => {
   return <div>{props.msg}</div>;
 };
 
-const DiscussionList = props => {
-  const allMessages = props.messages.map(message => {
-    return <DiscussionMessage msg={message} />;
-  });
-
-  return allMessages;
-};
-
-export default class Discussion extends Component {
+class DiscussionList extends Component {
   constructor() {
     super();
 
     const messages = ["Some message", "Another message"];
 
     this.state = {
+      messages: this.allMessages(messages)
+    };
+  }
+
+  allMessages = messages =>
+    messages.map(message => {
+      return (
+        <div>
+          <DiscussionMessage
+            key={`Message-${String(new Date())}`}
+            msg={message}
+          />
+        </div>
+      );
+    });
+
+  componentDidMount() {
+    console.log("hey from the kid....");
+
+    setInterval(() => {
+      this.setState({
+        messages: this.state.messages.concat([<div>Another one...</div>])
+      });
+    }, 2000);
+  }
+
+  render() {
+    return this.state.messages;
+  }
+}
+
+export default class Discussion extends Component {
+  constructor() {
+    super();
+
+    this.state = {
       pageTitle: "Discussion",
-      messages: messages
+      currentTime: String(new Date())
     };
   }
 
   componentDidMount() {
-    console.log("hey....");
-    this.setState({ pageTitle: "New Title" });
+    console.log("hey from the parent....");
+
+    setInterval(() => {
+      this.setState({
+        currentTime: String(new Date())
+      });
+    }, 1000);
   }
 
   render() {
@@ -35,7 +68,8 @@ export default class Discussion extends Component {
     return (
       <div>
         <h1>{pageTitle}</h1>
-        <DiscussionList messages={this.state.messages} />
+        <DiscussionList />
+        <div>{this.state.currentTime}</div>
       </div>
     );
   }
