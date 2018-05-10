@@ -2,6 +2,9 @@
 
 ## Topics covered
 
+- React router dom
+- Component lifecycle methods
+
 ### Component Life Cycle methods
 
 [Docs](https://reactjs.org/docs/react-component.html)

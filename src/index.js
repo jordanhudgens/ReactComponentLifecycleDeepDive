@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import App from './components/app';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import App from "./components/app";
 
 ReactDOM.render(
-  <App />
-  , document.querySelector('.app-wrapper'));
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.querySelector(".app-wrapper")
+);
