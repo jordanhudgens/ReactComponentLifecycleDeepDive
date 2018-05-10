@@ -10,6 +10,8 @@ export default class Discussion extends Component {
   }
 
   render() {
-    return <h1>{this.state.pageTitle}</h1>;
+    const { pageTitle } = this.state;
+
+    return <h1>{pageTitle}</h1>;
   }
 }
