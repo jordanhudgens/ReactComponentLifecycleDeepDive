@@ -3,6 +3,8 @@
 ## Topics covered
 
 - React router dom
+- Class vs function components
+- Object deconstruction
 - Component lifecycle methods
 
 ### Component Life Cycle methods
