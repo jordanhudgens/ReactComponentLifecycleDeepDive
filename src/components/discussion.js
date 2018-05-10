@@ -9,6 +9,11 @@ export default class Discussion extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log("hey....");
+    this.setState({ pageTitle: "New Title" });
+  }
+
   render() {
     const { pageTitle } = this.state;
 
