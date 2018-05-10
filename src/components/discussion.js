@@ -28,13 +28,16 @@ class DiscussionList extends Component {
     });
 
   componentDidMount() {
-    console.log("hey from the kid....");
-
-    setInterval(() => {
+    this.messageAdder = setInterval(() => {
+      console.log("hey from the auto generated element....");
       this.setState({
         messages: this.state.messages.concat([<div>Another one...</div>])
       });
     }, 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.messageAdder);
   }
 
   render() {
@@ -55,11 +58,15 @@ export default class Discussion extends Component {
   componentDidMount() {
     console.log("hey from the parent....");
 
-    setInterval(() => {
+    this.liveTime = setInterval(() => {
       this.setState({
         currentTime: String(new Date())
       });
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.liveTime);
   }
 
   render() {

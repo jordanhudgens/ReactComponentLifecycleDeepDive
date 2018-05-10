@@ -17,7 +17,7 @@
 
 - constructor()
 - static getDerivedStateFromProps()
-- componentWillMount() / UNSAFE_componentWillMount()
+- componentWillMount()
 - render()
 - componentDidMount()
 
@@ -27,10 +27,10 @@
 
 *An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
-- componentWillReceiveProps() / UNSAFE_componentWillReceiveProps()
+- componentWillReceiveProps()
 - static getDerivedStateFromProps()
 - shouldComponentUpdate()
-- componentWillUpdate() / UNSAFE_componentWillUpdate()
+- componentWillUpdate()
 - render()
 - getSnapshotBeforeUpdate()
 - componentDidUpdate()
