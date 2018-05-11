@@ -25,7 +25,7 @@
 
 **Updating**
 
-*An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
+*An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:*
 
 - componentWillReceiveProps()
 - static getDerivedStateFromProps()
