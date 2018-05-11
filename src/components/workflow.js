@@ -18,20 +18,24 @@ export default class Workflow extends Component {
     console.log("componentDidMount");
   }
 
+  // Fith (after update)
   shouldComponentUpdate() {
     console.log("shouldComponentUpdate");
     return true;
   }
 
+  // Seventh (after update)
   getSnapshotBeforeUpdate() {
     console.log("getSnapshotBeforeUpdate");
     return true;
   }
 
+  // Eighth (after update)
   componentDidUpdate() {
     console.log("componentDidUpdate");
   }
 
+  // Last
   componentWillUnmount() {
     console.log("componentWillUnmount");
   }
@@ -41,7 +45,12 @@ export default class Workflow extends Component {
     this.setState({ pageTitle: "Workflow" });
   };
 
+  handleKeyUp = e => {
+    this.setState({ inputDetails: e.target.value });
+  };
+
   // Third
+  // Sixth (after update)
   render() {
     console.log("render");
 
@@ -49,6 +58,7 @@ export default class Workflow extends Component {
       <div>
         <h1>Workflow</h1>
 
+        <input type="text" onKeyUp={e => this.handleKeyUp(e)} />
         <button onClick={this.handleClick}>Click Me</button>
       </div>
     );
