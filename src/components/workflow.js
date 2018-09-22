@@ -18,7 +18,7 @@ export default class Workflow extends Component {
     console.log("componentDidMount");
   }
 
-  // Fith (after update)
+  // Fifth (before update)
   shouldComponentUpdate() {
     console.log("shouldComponentUpdate");
     return true;
